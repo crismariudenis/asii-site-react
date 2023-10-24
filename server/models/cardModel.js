@@ -1,4 +1,5 @@
-import mongoose, { Schema } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema } = require("mongoose");
 
 const cardSchema = new Schema(
   {
@@ -21,4 +22,4 @@ const cardSchema = new Schema(
 
 const Card = mongoose.models.Card || mongoose.model("Card", cardSchema);
 
-export default Card;
+module.exports = Card;
