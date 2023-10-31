@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-const Card = ({ card, index }) => {
+const CardPage = ({ card, index }) => {
   return (
     <div
       style={{
@@ -45,7 +45,7 @@ const Card = ({ card, index }) => {
           left: 50,
           top: 200,
           position: "absolute",
-          background: "#319CEA",
+          background: "#ff0000",
           borderRadius: 20,
         }}
       />
@@ -69,4 +69,4 @@ const Card = ({ card, index }) => {
   );
 };
 
-export default Card;
+export default CardPage;

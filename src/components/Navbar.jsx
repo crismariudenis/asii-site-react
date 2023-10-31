@@ -1,10 +1,19 @@
-import Link from "next/link";
+import React from "react";
+import UserIcon from "./UserIcon";
+import "../App.css";
 
-export default function Navbar() {
+export default function NavBar({userName}) {
   return (
-    <nav className="flex justify-between items-center bg-slate-800 px-8 py-3">
-      <Link className = "text-white font-bold"href={"/"}>LINK TO HOME</Link>
-      <Link className="bg-white p-2" href={"/"}>Add something</Link>
-    </nav>
+    <>
+      <nav className="navbar">
+        <h1 style={styles.font}>ASII</h1>
+        <UserIcon userName={userName} />
+      </nav>
+    </>
   );
 }
+const styles = {
+  font: {
+    fontFamily: "Arial, sans-serif",
+  },
+};

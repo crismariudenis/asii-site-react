@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-const Login = () => {
+const Login = ({setUser}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState({});
 
   const validateForm = () => {
     return username.length > 0 && password.length > 5;
@@ -17,7 +16,6 @@ const Login = () => {
       const response = await axios.get(
         `http://localhost:3001/api/users?username=${username}&password=${password}`
       );
-      // console.log(response.data.user.name);
       setUser(response.data.user);
       if (!response.data.validCredentials) {
         alert("The credentials provided aren't valid");
@@ -58,9 +56,7 @@ const Login = () => {
     await register();
   };
 
-  return user && user.name ? (
-    <h1 style={styles.container}>You are '{user.name}'</h1>
-  ) : (
+  return (
     <>
       <div style={styles.container}>
         <form style={styles.form}>
