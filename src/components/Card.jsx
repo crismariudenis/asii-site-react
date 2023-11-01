@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+
 const Card = ({ card, index }) => {
   return (
     <div
@@ -37,6 +38,20 @@ const Card = ({ card, index }) => {
         }}
       >
         {card.name}
+      </div>
+      <div
+        style={{
+          left: 50,
+          top: 90, // Adjusted the position for the new text field
+          position: "absolute",
+          color: "black",
+          fontSize: 20,
+          fontFamily: "Inter",
+          fontWeight: "400",
+          wordWrap: "break-word",
+        }}
+      >
+        {card.text}
       </div>
       <div
         style={{

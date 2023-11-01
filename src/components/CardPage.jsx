@@ -1,72 +1,59 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../App.css";
-const CardPage = ({ card, index }) => {
+
+const CardDetail = ({ card }) => {
+  const styles = {
+    container: {
+      width: "60vw",
+      margin: "20px auto",
+      padding: "20px",
+      border: "1px solid #ccc",
+      borderRadius: "8px",
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+      backgroundColor: "#fff",
+      fontFamily: "Arial, sans-serif",
+    },
+    heading: {
+      fontSize: "2em",
+      fontWeight: "bold",
+      marginBottom: "10px",
+    },
+    title: {
+      fontSize: "3em",
+      fontWeight: "bold",
+      marginBottom: "10px",
+    },
+    listItem: {
+      marginBottom: "8px",
+    },
+  };
+
+  if (!card) {
+    return <div style={styles.container}>Card not found</div>;
+  }
+
   return (
-    <div
-      style={{
-        width: "40vw",
-        height: "15vw",
-        position: "relative",
-        margin: "20px",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          left: 0,
-          top: 0,
-          position: "absolute",
-          background: "#F8F8F8",
-          boxShadow: "5px 5px 4px rgba(0, 0, 0, 0.2)",
-          borderRadius: 20,
-          border: "1px solid",
-        }}
-      />
-      <div
-        style={{
-          left: 50,
-          top: 30,
-          position: "absolute",
-          color: "black",
-          fontSize: 44,
-          fontFamily: "Inter",
-          fontWeight: "700",
-          wordWrap: "break-word",
-        }}
-      >
-        {card.name}
-      </div>
-      <div
-        style={{
-          width: 150,
-          height: 50,
-          left: 50,
-          top: 200,
-          position: "absolute",
-          background: "#ff0000",
-          borderRadius: 20,
-        }}
-      />
-      <Link to={`/cards/${index}`} style={{ textDecoration: "none" }}>
-        <div
-          style={{
-            left: 70,
-            top: 215,
-            position: "absolute",
-            color: "white",
-            fontSize: 18,
-            fontFamily: "Inter",
-            fontWeight: "400",
-            wordWrap: "break-word",
-          }}
-        >
-          READ MORE
-        </div>
-      </Link>
+    <div style={styles.container}>
+      <h1 style={styles.title}>{card.name}</h1>
+      <p>In Iasi: {card.inIasi ? "Yes" : "No"}</p>
+      <p>Technologies: {card.technologies.join(", ")}</p>
+      <h3 style={styles.heading}>Packets:</h3>
+      <ul>
+        {card.packets.map((packet) => (
+          <li key={packet._id} style={styles.listItem}>
+            Date: {packet.date}, Amount: {packet.amount}
+          </li>
+        ))}
+      </ul>
+      <h3 style={styles.heading}>Helping Methods:</h3>
+      <ul>
+        {card.helpingMethod.map((method) => (
+          <li key={method} style={styles.listItem}>
+            {method}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default CardPage;
+export default CardDetail;
