@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [user, setUser] = useState([]);
   const [cards,setCards]=useState([])
-  return (true) ? ( // user && user.name
+  return (user && user.name) ? (
     <>
       <Navbar userName={user.name} />
       <CardList cards={cards} setCards={setCards}/>
