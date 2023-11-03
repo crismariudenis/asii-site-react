@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
+import Flip from 'react-reveal/Flip'
+
+import "@fontsource/open-sans"; 
+
 const Card = ({ card, index }) => {
   return (
     <div
@@ -9,30 +13,35 @@ const Card = ({ card, index }) => {
         width: "40vw",
         height: "15vw",
         position: "relative",
-        margin: "20px",
+        margin: "10px",
+        marginBottom: "25px",
       }}
     >
       <div
         style={{
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+          backgroundColor: "#fff",
           width: "100%",
           height: "100%",
           left: 0,
           top: 0,
           position: "absolute",
-          background: "#F8F8F8",
-          boxShadow: "5px 5px 4px rgba(0, 0, 0, 0.2)",
-          borderRadius: 20,
-          border: "1px solid",
         }}
       />
+      
+      <Flip top cascade>
       <div
         style={{
-          left: 50,
-          top: 30,
+          width: "100%",
+          height: "100%",
+          top: "1vw",
           position: "absolute",
           color: "black",
           fontSize: 44,
-          fontFamily: "Inter",
+          fontFamily: "Open Sans",
+          textAlign: "center",
           fontWeight: "700",
           wordWrap: "break-word",
         }}
@@ -41,38 +50,29 @@ const Card = ({ card, index }) => {
       </div>
       <div
         style={{
-          left: 50,
+          padding: "0% 2.5% 0% 2.5%",
           top: 90, // Adjusted the position for the new text field
           position: "absolute",
           color: "black",
           fontSize: 20,
-          fontFamily: "Inter",
+          fontFamily: "Open Sans",
           fontWeight: "400",
           wordWrap: "break-word",
         }}
       >
         {card.text}
       </div>
-      <div
-        style={{
-          width: 150,
-          height: 50,
-          left: 50,
-          top: 200,
-          position: "absolute",
-          background: "#319CEA",
-          borderRadius: 20,
-        }}
-      />
       <Link to={`/cards/${index}`} style={{ textDecoration: "none" }}>
         <div
           style={{
-            left: 70,
-            top: 215,
+            width: "100%",
+            top: "79%",
             position: "absolute",
-            color: "white",
+            color: "rgb(239 68 68)",
+            textShadow: "0px 0px 25px #ef4444",
             fontSize: 18,
-            fontFamily: "Inter",
+            fontFamily: "Open Sans",
+            textAlign: "center",
             fontWeight: "400",
             wordWrap: "break-word",
           }}
@@ -80,8 +80,25 @@ const Card = ({ card, index }) => {
           READ MORE
         </div>
       </Link>
+      </Flip>
     </div>
   );
 };
+
+/* /* 
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          top: "75%",
+          left: "16vw",
+          width: "8.25vw",
+          height: "3rem",
+          position: "absolute",
+          background: "rgb(239 68 68)",
+          borderRadius: 10,
+        }}
+      /> */
 
 export default Card;

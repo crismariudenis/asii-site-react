@@ -107,27 +107,35 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: "84vh", // sa incapa si footeru pe login page...
   },
   form: {
+    border: "1px solid #ccc",
+    borderRadius: "8px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    backgroundColor: "#fff",
     width: "300px",
     padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "5px",
-    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
   },
   label: {
     display: "block",
     marginBottom: "8px",
+    textAlign: "center",
+    fontFamily: "Open Sans, sans-serif",
   },
   input: {
     width: "100%",
     padding: "8px",
     marginBottom: "16px",
     boxSizing: "border-box",
+    textAlign: "center",
+    fontFamily: "Open Sans, sans-serif",
   },
   button: {
-    width: "50%",
+    width: "45%",
+    marginTop: "5%",
+    marginLeft: "2.5%",
+    marginRight: "2.5%"
   },
 };
 export default Login;

@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Link, Route } from "react-router-dom";
 import Card from "./Card";
 import CardPage from "./CardPage";
 
+import "@fontsource/open-sans"; 
+
 const CardList = ({ cards, setCards }) => {
   useEffect(() => {
     const fetchCards = async () => {
@@ -44,7 +46,7 @@ const CardList = ({ cards, setCards }) => {
 const styles = {
   container: {
     display: "flex",
-    flexDirection: "column", // Stack items vertically
+    flexDirection: "row", // Stack items vertically
     justifyContent: "center",
     alignItems: "center",
   },
@@ -57,7 +59,7 @@ const styles = {
     backgroundColor: "#fff",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
     borderRadius: "8px",
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "Open Sans, sans-serif",
     marginBottom: "20px", // Adjust margin to add space between cards
   },
   cardImage: {
