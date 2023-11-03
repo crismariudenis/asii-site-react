@@ -73,7 +73,7 @@ const CardDetail = ({ card }) => {
             ))}
           </ul>
           <h3>
-            <Link to={`./`} style={styles.back}>Back</Link>
+            <Link to={`../../`} style={styles.back}>Back</Link>
           </h3>
         </Flip>
       </div>
